@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/c28-features-app/static/css/main.3ddf52bc.css",
+    "main.js": "/c28-features-app/static/js/main.58a16bfb.js",
+    "index.html": "/c28-features-app/index.html",
+    "main.3ddf52bc.css.map": "/c28-features-app/static/css/main.3ddf52bc.css.map",
+    "main.58a16bfb.js.map": "/c28-features-app/static/js/main.58a16bfb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ddf52bc.css",
+    "static/js/main.58a16bfb.js"
+  ]
+}
