@@ -35,11 +35,25 @@ function App() {
     });
   }
 
+  function deleteFeatureItem(id) {
+    setFeatureItems(oldFeatureItems => {
+      // Step 1: deep clone
+      let newFeatureItems = structuredClone(oldFeatureItems);
+      // Step 2: assemble the new feature items value 
+      newFeatureItems = newFeatureItems.filter(feature => feature.id !== id);
+      // Step 3: return the assembled new value
+      return newFeatureItems;
+    });
+  }
+
+
   return (
     <div className="App">
       <h1>JavaScript Features App</h1>
       <FeaturesForm addFeatureItem={addFeatureItem} />
-      <FeaturesList featureItems={featureItems} />
+      <FeaturesList 
+        featureItems={featureItems} 
+        deleteFeatureItem={deleteFeatureItem} />
     </div>
   );
 }

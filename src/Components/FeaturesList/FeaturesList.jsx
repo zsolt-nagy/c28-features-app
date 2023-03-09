@@ -1,18 +1,17 @@
 import React from 'react';
+import FeatureItem from './FeatureItem/FeatureItem';
 
 export default function FeaturesList(props) {
 
     let tableRowsJsx = [];
-    for (let featureItem of props.featureItems) {
-        tableRowsJsx.push(
-            <tr key={featureItem.id}>
-                <td>{featureItem.feature}</td>
-                <td>{featureItem.version}</td>
-                <td>{featureItem.year}</td>
-            </tr>
+    for (let item of props.featureItems) {
+        tableRowsJsx.push( 
+            <FeatureItem 
+                key={item.id} 
+                item={item} 
+                deleteFeatureItem={props.deleteFeatureItem} /> 
         );
     }
-
 
     return (
         <table>
@@ -21,6 +20,7 @@ export default function FeaturesList(props) {
                     <th>Feature</th>
                     <th>Version</th>
                     <th>Year</th>
+                    <th>Operations</th>
                 </tr>
             </thead>
             <tbody>
