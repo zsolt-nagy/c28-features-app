@@ -1,0 +1,10 @@
+.features-table {
+    border: 2px solid white;
+    margin: 2rem auto;
+    border-collapse: collapse;
+}
+
+.features-table th, .features-table td {
+    border: 1px solid white;
+    padding: 6px;
+}

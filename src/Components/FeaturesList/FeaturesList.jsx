@@ -1,5 +1,6 @@
 import React from 'react';
 import FeatureItem from './FeatureItem/FeatureItem';
+import './FeatureList.css';
 
 export default function FeaturesList(props) {
 
@@ -14,7 +15,7 @@ export default function FeaturesList(props) {
     }
 
     return (
-        <table>
+        <table className="features-table">
             <thead>
                 <tr>
                     <th>Feature</th>
