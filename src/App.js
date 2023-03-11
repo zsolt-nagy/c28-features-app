@@ -1,23 +1,26 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import FeaturesForm from './Components/FeaturesForm/FeaturesForm';
 import FeaturesList from './Components/FeaturesList/FeaturesList';
 
 function App() {
-  const [featureItems, setFeatureItems] = React.useState([
-    {
-      feature: 'Class syntax',
-      version: 'ES6',
-      year: 2015, 
-      id: 1
-    },
-    {
-      feature: 'Object destructuring',
-      version: 'ES9', 
-      year: 2018,
-      id: 2
-    }
-  ]);
+  const [featureItems, setFeatureItems] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('https://qxzje9-8080.csb.app/api/features/')
+      .then((response) => {
+        if (Array.isArray(response.data)) {
+          setFeatureItems(response.data);
+        } else {
+          setFeatureItems([]);
+        }
+      })
+      .catch((error) => {
+        setFeatureItems([]);
+      });
+  }, []);
 
   function addFeatureItem(feature, version, year) {
     setFeatureItems(oldFeatureItems => {
